@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Container, Form, Button, Card } from "react-bootstrap";
-import { createInstructor } from "../../api/admin.api"; // ✅ correct import
+import { createInstructor } from "../../api/admin.api"; 
 import { toast } from "react-toastify";
 
 const CreateInstructor = () => {
@@ -21,7 +21,7 @@ const CreateInstructor = () => {
     setLoading(true);
 
     try {
-      await createInstructor(formData); // ✅ correct function call
+      await createInstructor(formData); 
       toast.success("Instructor created successfully");
       setFormData({ name: "", email: "", password: "" });
     } catch (error) {

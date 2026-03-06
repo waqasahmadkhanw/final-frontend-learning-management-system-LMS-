@@ -34,7 +34,7 @@ const MyCourses = () => {
 
       const enrollments = response?.data?.data || [];
 
-      // 🔥 Extract course data from enrollment
+      //  Extract course data from enrollment
       const extractedCourses = enrollments.map((enrollment) => ({
         enrollmentId: enrollment._id,
         progress: enrollment.progress || 0,

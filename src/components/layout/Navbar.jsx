@@ -234,7 +234,7 @@ const AppNavbar = () => {
 
                 <NavDropdown.Item
                   as={Link}
-                  to="/my-courses"
+                  to="/courses"
                 >
                   📚 My Courses
                 </NavDropdown.Item>
@@ -243,7 +243,7 @@ const AppNavbar = () => {
                   as={Link}
                   to="/instructor/manage-students"
                 >
-                  👨‍🎓 Manage Students
+                 👨‍🎓 Manage Students later will be handle
                 </NavDropdown.Item>
 
                 <NavDropdown.Divider />
@@ -252,9 +252,12 @@ const AppNavbar = () => {
                   as={Link}
                   to="/instructor/analytics"
                 >
-                  📈 Analytics
+                  📈 Analytics later will be handle
                 </NavDropdown.Item>
               </NavDropdown>
+
+
+
             )}
 
             {/* ===== Admin Panel (UNCHANGED) ===== */}

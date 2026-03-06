@@ -1,22 +1,22 @@
 
 import axiosInstance from "./axiosInstance";
 
-// 👥 Get All Users
+//  Get All Users
 export const getAllUsers = () => {
   return axiosInstance.get("/admin/users");
 };
 
-// ❌ Delete User
+// Delete User
 export const deleteUser = (id) => {
-  return axiosInstance.delete(`/users/${id}`);
+  return axiosInstance.delete(`/admin/users/${id}`);
 };
 
-// 👨‍🏫 Create Instructor
+//  Create Instructor
 export const createInstructor = (instructorData) => {
   return axiosInstance.post("/admin/create-instructor", instructorData);
 };
 
-// 📚 Admin Manage Courses
+// Admin Manage Courses
 export const adminGetCourses = () => {
   return axiosInstance.get("/courses");
 };

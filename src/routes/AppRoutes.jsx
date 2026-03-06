@@ -131,7 +131,7 @@ const AppRoutes = () => {
             </InstructorRoute>
           }
         />
-
+       
         <Route
           path="/instructor/manage-courses"
           element={
@@ -151,7 +151,7 @@ const AppRoutes = () => {
         />
 
         <Route
-          path="/instructor/create-lesson/:courseId"
+          path="/lessons/create-lesson/:courseId"
           element={
             <InstructorRoute>
               <CreateLesson />

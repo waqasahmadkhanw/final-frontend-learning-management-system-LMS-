@@ -15,7 +15,7 @@ const ManageUsers = () => {
   const fetchUsers = async () => {
     try {
       const { data } = await getAllUsers();
-      console.log("manage user data")
+    //   console.log("manage user data",data)
       setUsers(data.data);
     } catch {
       toast.error("Failed to fetch users");
@@ -29,6 +29,7 @@ const ManageUsers = () => {
 
     try {
       await deleteUser(id);
+      console.log("id of deleting user",id)
       toast.success("User deleted successfully");
       fetchUsers();
     } catch {
@@ -53,7 +54,7 @@ const ManageUsers = () => {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user._id}>
+            <tr key={user?._id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.role}</td>
@@ -61,7 +62,7 @@ const ManageUsers = () => {
                 <Button
                   variant="danger"
                   size="sm"
-                  onClick={() => handleDelete(user._id)}
+                  onClick={() => handleDelete(user?._id)}
                 >
                   Delete
                 </Button>
