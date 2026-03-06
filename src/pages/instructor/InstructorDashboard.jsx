@@ -9,7 +9,7 @@
 //       {/* ===== Header Section ===== */}
 //       <div className="mb-5">
 //         <h2 className="fw-bold">
-//           👋 Welcome back, {user?.name}
+//           Welcome back, {user?.name}
 //         </h2>
 //         <p className="text-muted mb-0">
 //           Manage your courses and grow your students.

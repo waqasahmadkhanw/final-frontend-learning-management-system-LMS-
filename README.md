@@ -257,7 +257,8 @@ Manage Courses
 
 Clone the repository:
 
-git clone https://github.com/yourusername/lms-project.git
+git clone :FRONTEND: https://github.com/waqasahmadkhanw/final-frontend-learning-management-system-LMS-
+git clone :BACKEND:  https://github.com/waqasahmadkhanw/final-mern-stack-learning-management-system
 
 Go to lms-frontend folder:
 
