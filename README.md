@@ -327,3 +327,4 @@ This project is created for educational purposes as part of the MERN Stack Web D
 Student Name: WAQAS AHMAD KHAN
 Course: MERN Stack Web Development
 Project: Learning Management System (LMS)
+![Manage Courses](lms-frontend\public\images\ABOUTPAGE.png)

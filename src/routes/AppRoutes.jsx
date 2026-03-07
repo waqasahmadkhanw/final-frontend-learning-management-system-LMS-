@@ -140,7 +140,14 @@ const AppRoutes = () => {
             </InstructorRoute>
           }
         />
-
+        <Route
+          path="/courses/instructor/manage-courses"
+          element={
+            <ProtectedRoute>
+              <MyCourses />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/instructor/edit-course/:id"
           element={
