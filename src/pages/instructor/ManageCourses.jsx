@@ -236,13 +236,13 @@ const ManageCourses = () => {
 
               <Card className="shadow-sm h-100">
 
-                {course.thumbnail && (
+                {/* {course.thumbnail && (
                   <Card.Img
                     variant="top"
                     src={course.thumbnail}
                     style={{ height: "180px", objectFit: "cover" }}
                   />
-                )}
+                )} */}
 
                 <Card.Body>
 

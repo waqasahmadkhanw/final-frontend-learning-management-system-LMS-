@@ -8,7 +8,7 @@ const Footer = () => {
         color: "#fff",
         padding: "20px 0",
         marginTop: "auto",
-        marginTop: "20px",
+        marginBottom: "20px",
       }}
     >
       <Container className="text-center">

@@ -31,8 +31,8 @@ Real-world, industry-standard architecture
 <h2>Submitted By:Waqas Ahmad khan</h2>
 <h4>I confirm that this project is my own work and I have not copied it from any unauthorized source.
 Student Name:_waqasahmad_
- Signature: waqas______________________
- Date: ____</h4>
+ Signature: waqas___ahmad
+ Date:10-03-2026</h4>
     </Container>
   );
 };

@@ -104,7 +104,7 @@ const Sidebar = () => {
       }}
     >
       {/* Logo */}
-      <h4 className="text-center mb-4">🎓 LMS Pro</h4>
+      <h4 className="text-center mb-4">🎓 LMS Pro </h4>
 
       <Nav className="flex-column">
 

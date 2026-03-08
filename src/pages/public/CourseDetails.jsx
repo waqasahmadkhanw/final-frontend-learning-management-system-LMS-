@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
-import { data, useParams } from "react-router-dom";
-import { Container, Card, Button, Alert } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { Container, Card, Button, Alert, Row, Col } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { getCourseById } from "../../api/course.api";
 import { enrollCourse } from "../../api/enrollment.api";
@@ -22,9 +22,8 @@ const CourseDetails = () => {
     try {
       setLoading(true);
       const response = await getCourseById(id);
-      console.log("courese by id",response)
+      console.log("course by id", response);
 
-      // Handle API response safely
       const courseData = response?.data?.data || null;
 
       if (!courseData) {
@@ -51,7 +50,7 @@ const CourseDetails = () => {
       toast.success("Successfully enrolled!");
     } catch (err) {
       console.error("Enroll Error:", err);
-      toast.error("Enrollment failed");
+      toast.error("Enrollment failed .You are not authorized to enroll or Your already have this course");
     } finally {
       setEnrolling(false);
     }
@@ -62,30 +61,53 @@ const CourseDetails = () => {
   if (error)
     return (
       <Container className="py-5">
-        <Alert variant="danger">{error}</Alert>
+        <Alert variant="danger" className="text-center">
+          {error}
+        </Alert>
       </Container>
     );
 
   return (
     <Container className="py-5">
-      <Card className="shadow">
-        <Card.Body>
-          <Card.Title className="fw-bold">{course?.title || "Untitled Course"}</Card.Title>
-          <Card.Text>{course?.description || "No description available."}</Card.Text>
-          <Button
-            variant="success"
-            onClick={handleEnroll}
-            disabled={enrolling}
-          >
-            {enrolling ? "Enrolling..." : "Enroll Now"}
-          </Button>
-        </Card.Body>
-      </Card>
+      <Row className="justify-content-center">
+        <Col md={8} lg={7}>
+          <Card className="shadow-lg border-0 rounded-4">
+            <Card.Body className="p-5">
+
+              {/* Course Title */}
+              <h2 className="fw-bold mb-3">
+                {course?.title || "Untitled Course"}
+              </h2>
+
+              <hr />
+
+              {/* Description */}
+              <p className="text-muted mb-4" style={{ lineHeight: "1.7" }}>
+                {course?.description || "No description available."}
+              </p>
+              <p className="text-muted mb-4" style={{ lineHeight: "1.7" }}>
+               Rs. {course?.price || "No description available."}
+              </p>
+    
+              {/* Enroll Button */}
+              <div className="d-flex justify-content-end">
+                <Button
+                  variant="success"
+                  size="lg"
+                  onClick={handleEnroll}
+                  disabled={enrolling}
+                  className="px-4"
+                >
+                  {enrolling ? "Enrolling..." : "Enroll Now"}
+                </Button>
+              </div>
+
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   );
 };
 
 export default CourseDetails;
-
-
-

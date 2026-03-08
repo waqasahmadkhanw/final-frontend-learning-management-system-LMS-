@@ -48,7 +48,7 @@ const ManageLessons = () => {
             <Card.Title>{lesson.title}</Card.Title>
             <Button
               variant="danger"
-              onClick={() => handleDelete(lesson._id)}
+              onClick={() => handleDelete(lesson?._id)}
             >
               Delete
             </Button>
