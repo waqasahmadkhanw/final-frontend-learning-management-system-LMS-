@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Centralized Axios Configuration
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8000/api", 
+  baseURL: "mern-lms-punjab.up.railway.app", 
   withCredentials: true, // REQUIRED for cookies (JWT)
   headers: {
     "Content-Type": "application/json",
