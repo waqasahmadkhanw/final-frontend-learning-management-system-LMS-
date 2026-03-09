@@ -2,6 +2,7 @@ import axios from "axios";
 
 // Centralized Axios Configuration
 const axiosInstance = axios.create({
+  // baseURL: "http://localhost:8000/api", 
   baseURL: "https://mern-lms-punjab.up.railway.app/api", 
   //for localy testing use vite port 5173
   withCredentials: true, // REQUIRED for cookies (JWT)
