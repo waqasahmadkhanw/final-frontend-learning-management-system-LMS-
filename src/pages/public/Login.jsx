@@ -103,6 +103,7 @@
 // };
 
 // export default Login;
+
 //------ IMPROVED LOGICAL CODE FOR PRODUTCION-------//
 import { useState, useContext } from "react";
 import { Container, Form, Button, Card, Spinner } from "react-bootstrap";
@@ -123,7 +124,9 @@ const Login = () => {
     password: "",
   });
 
+  // ===============================
   // Handle input change
+  // ===============================
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -133,7 +136,9 @@ const Login = () => {
     }));
   };
 
+  // ===============================
   // Handle login submit
+  // ===============================
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -142,6 +147,7 @@ const Login = () => {
     }
 
     try {
+
       setLoading(true);
 
       const response = await loginUser(formData);
@@ -150,34 +156,34 @@ const Login = () => {
       console.log("Login API response:", data);
 
       // Validate response
-      if (!data) {
+      if (!data?.data) {
         throw new Error("Invalid server response");
       }
 
-      // Save token
-      if (data?.token) {
-        localStorage.setItem("token", data.token);
+      const user = data.data.user;
+      const accessToken = data.data.accessToken;
+
+      // Save token for Axios interceptor
+      if (accessToken) {
+        localStorage.setItem("token", accessToken);
       }
 
-      // Save user in context
-      if (data?.user) {
-        setUser(data.user);
-      }
+      // Save user to context
+      setUser(user);
 
-      toast.success("Login successful!");
+      toast.success(data.message || "Login successful!");
 
-      // Redirect based on role safely
-      const role = data?.user?.role;
+      // ===============================
+      // Role based navigation
+      // ===============================
 
-      if (role === "admin") {
-        navigate("/admin/dashboard");
-      } 
-      else if (role === "instructor") {
-        navigate("/instructor/dashboard");
-      } 
-      else {
-        navigate("/");
-      }
+      const routes = {
+        admin: "/admin/dashboard",
+        instructor: "/instructor/dashboard",
+        student: "/",
+      };
+
+      navigate(routes[user?.role] || "/");
 
     } catch (error) {
 
@@ -190,7 +196,9 @@ const Login = () => {
       );
 
     } finally {
+
       setLoading(false);
+
     }
   };
 
