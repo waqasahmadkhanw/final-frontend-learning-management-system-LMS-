@@ -165,7 +165,7 @@ const Login = () => {
 
       // Save token for Axios interceptor
       if (accessToken) {
-        localStorage.setItem("token", accessToken);
+        localStorage.setItem("accessToken");
       }
 
       // Save user to context
