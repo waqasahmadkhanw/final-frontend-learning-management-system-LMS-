@@ -13,7 +13,9 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken",accessToken);
+      console.log("Unauthorized. Please login again token expired.",token);
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
