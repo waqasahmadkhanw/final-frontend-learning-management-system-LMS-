@@ -1,4 +1,4 @@
-// 
+ 
 import { useEffect, useState } from "react";
 import { Container, Table, Button, Card, Badge, Row, Col } from "react-bootstrap";
 import { getAllCourses, deleteCourse } from "../../api/course.api";

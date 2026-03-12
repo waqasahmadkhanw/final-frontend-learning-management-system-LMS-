@@ -114,10 +114,13 @@ const Footer = () => {
               style={{ fontSize: "14px", opacity: "0.8" }}
               className="mb-0"
             >
-              Crafted with ❤️ by
+              Developed by:
               <span className="fw-bold ms-1 text-info">
-                Waqas Ahmad Khan
+                Waqas Ahmad Khan <br />
+               
+               MERN stack|| Gen Ai with JS || Devops Engineer
               </span>
+              
             </p>
           </Col>
 
