@@ -104,3 +104,245 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 .hero-img:hover {
   transform: scale(1.02);
 }
+
+/* =========================
+   LOGIN PAGE ENHANCEMENTS
+========================= */
+
+/* Card Animation */
+.login-card {
+  transition: all 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Input Styling */
+.login-card .form-control {
+  border-radius: 8px;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+.login-card .form-control:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.2);
+}
+
+/* Input Group Icon Background */
+.login-card .input-group-text {
+  background: #f1f5f9;
+  border: none;
+}
+
+/* Button Upgrade */
+.login-card .btn-dark {
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.login-card .btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Link Styling */
+.login-card a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.login-card a:hover {
+  text-decoration: underline;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card {
+  animation: fadeInUp 0.6s ease;
+}
+
+
+/* Sidebar links */
+.sidebar .nav-link {
+  color: #cbd5e1;
+  font-weight: 500;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Active */
+.sidebar .nav-link.active {
+  background: #6366f1;
+  color: white;
+}
+
+
+/* =========================
+   FOOTER STYLING
+========================= */
+
+.footer {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: #fff;
+  padding: 50px 0 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Text */
+.footer-text {
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: #60a5fa;
+  transform: translateX(4px);
+}
+
+/* Icons */
+.footer-icon {
+  color: #fff;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.footer-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: #60a5fa;
+}
+
+/* Divider */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+  margin: 30px 0 15px;
+}
+
+/* Bottom */
+.footer-bottom {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+/* =========================
+   PREMIUM LOADER
+========================= */
+
+/* Wrapper */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Full screen overlay */
+.loader.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  z-index: 9999;
+}
+
+/* Box */
+.loader-box {
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Spinner */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite, glow 1.5s ease-in-out infinite;
+  margin: auto;
+}
+
+/* Text */
+.loader-text {
+  margin-top: 15px;
+  color: #e0e7ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #6366f1;
+  }
+  50% {
+    box-shadow: 0 0 20px #6366f1;
+  }
+  100% {
+    box-shadow: 0 0 5px #6366f1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
